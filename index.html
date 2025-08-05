@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <!--Head-->
+    <!-- Head -->
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kanav Bajaj - Portfolio</title>
+        <link rel="shortcut icon" type="image/png" href="images/coding_icon.png">
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
-    <!--Body-->
-    <body class="Background">
-        
-        <!--Navbar-->
+    <!-- Body -->
+    <body class="Background">   
+        <!-- Navbar -->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
-        <!--Breaks for spacing-->
-        <br>
-        <br>
-
-        <!--Background video-->
+        <!-- Background video -->
         <div id="Home">
             <video autoplay muted loop id="Typing_Video">
                 <source src="images/video/Typing.mp4" type="video/mp4">
@@ -32,11 +29,11 @@
             </video>
         </div>
 
-        <!--Video text-->
+        <!-- Video text -->
         <div class="Video_Text">
             <h1 class="white-text">Kanav Bajaj's Portfolio</h1>
             <strong>
-                <p class="center">
+                <p class="center quote">
                     <q>Code is like poetry; it’s about expressing complex ideas with elegance and precision.</q>
                     <br> -Ada Lovelace (adapted)
                     <br>
@@ -47,13 +44,64 @@
             </strong>
         </div>
 
-        <!--About section-->
-        <div class="Row" id="About">
-            <!--Left column-->
-            <div class="Column_2">
-                <img src="images/kanav_bajaj.png" alt="Kanav Bajaj">
+        <!-- Slideshow section -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/kanav_bajaj.png" alt="Kanav Bajaj">
+                        <div class="text">I'm available to assist you on your project!</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/Python.png" alt="Python logo">
+                        <div class="text">the popular programming language Python,</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/SQL_and_Database.jpg" alt="SQL logo"> 
+                        <div class="text">back end development, databases and SQL.</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/contact.jpg" alt="Contact Kanav Bajaj"> 
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div> 
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <!-- Slideshow dots -->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
             </div>
-            <!--Right column-->
+        </div>
+
+        <!-- About section -->
+        <div class="Row" id="About">
+            <!-- Left column -->
+            <div class="Column_2">
+                <img src="images/development.png" alt="Kanav Bajaj">
+            </div>
+            <!-- Right column -->
             <div class="Column_1">
                 <h1>About</h1>
                 <p>
@@ -61,53 +109,55 @@
                     <br>
                     <br>I’m a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, skilled in HTML, CSS, JavaScript, Python, SQL, Ruby, and Ruby on Rails.
                     <br>
-                    <br>I’m excited to collaborate on innovative projects. <a href="#Contact">Reach out</a> to discuss opportunities!
+                    <br>I’m excited to collaborate on innovative projects. <a onclick="openForm()" class="contact">Contact</a> me below!
                 </p>
             </div>
         </div>
 
-        <!--GitHub section-->
+        <!-- GitHub section -->
         <div class="Row" id="GitHub">
-            <!--Left column-->
+            <!-- Left column -->
             <div class="Column_1">
                 <h1>GitHub</h1>
                 <p>
                     You can view my coding projects on my GitHub profile here:
                     <br>
                     <p class="center"><a href="https://github.com/kanavbajaj" target="_blank">Kanav Bajaj’s GitHub</a></p>
+                    <br>
+                    <p class="center"><a href="https://www.linkedin.com/in/kanav-bajaj-632076163/" target="_blank">Kanav Bajaj’s LinkedIn</a></p>
                 </p>
             </div>
-            <!--Right column-->
+            <!-- Right column -->
             <div class="Column_2">
                 <a href="https://github.com/kanavbajaj" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
             </div>
         </div>
 
-        <!--Contact section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="images/contact.jpg" alt="Contact Kanav Bajaj">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <form action="https://formspree.io/f/your-form-id" method="POST">
-                    <label>Name:</label>
-                        <input type="text" name="name" placeholder="Please enter your name here" required>
-                    <label>Email:</label>
-                        <input type="email" id="Email" name="Email" placeholder="Please enter your email here" required>
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here" required>
-                        <input type="submit" value="SUBMIT">
+        <!-- Contact form -->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" id="name" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" id="phone" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" id="email" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" id="message" placeholder="Type your message here" name="message">
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
 
-        <!--Footer section-->
+        <!-- Footer section -->
         <footer>
-            <p class="center">© Kanav Bajaj, <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
+            <p class="center">&copy Kanav Bajaj, <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
             <br>
         </footer>
+        <script src="JS/portfolio.js"></script>
     </body>
-</html><!-- trigger rebuild -->
+</html>
