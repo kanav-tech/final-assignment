@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Smooth scrolling
+    // Smooth scrolling for navbar links (including new Projects link)
     document.querySelectorAll('.Navbar a:not(.contact)').forEach(link => {
         link.addEventListener('click', function (event) {
             event.preventDefault();
@@ -120,4 +120,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    // Add scroll animation for project cards
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe project cards for animation on scroll
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+
+    // Observe skill categories for animation on scroll
+    const skillCategories = document.querySelectorAll('.skill-category');
+    skillCategories.forEach(category => {
+        category.style.opacity = '0';
+        category.style.transform = 'translateY(20px)';
+        category.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(category);
+    });
 });
